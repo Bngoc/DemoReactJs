@@ -1,23 +1,56 @@
 {
-  "name": "Demo React js",
+  "name": "DemoReactjs",
   "version": "1.0.0",
+  "private": true,
   "description": "demo reactjs",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "dev": "nodemon --watch src ./lib/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "SET NODE_ENV=dev& babel-node lib/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack -wd"
   },
   "author": "buingoc",
   "license": "ISC",
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
+    "babel-loader": "^7.0.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "bable-loader": "0.0.1-security",
     "config": "^2.0.1",
     "ejs": "^2.6.1",
     "eslint": "^5.6.1",
     "eslint-plugin-react": "^7.11.1",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "webpack": "^4.20.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bngoc/DemoReactJs.git"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test/*",
+      "docs/*"
+    ],
+    "delay": "2500"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env",
+      "stage-2"
+    ]
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
   }
 }
