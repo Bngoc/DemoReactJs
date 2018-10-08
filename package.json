@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "SET NODE_ENV=dev& babel-node lib/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack -wd"
+    "webpack": "webpack -wd",
+    "test-dev": "jest --watch"
   },
   "author": "buingoc",
   "license": "ISC",
@@ -28,6 +29,7 @@
     "eslint": "^5.6.1",
     "eslint-plugin-react": "^7.11.1",
     "express": "^4.16.3",
+    "jest": "^23.6.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "webpack": "^4.20.2"
