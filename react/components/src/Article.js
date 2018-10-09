@@ -1,16 +1,21 @@
 import React from "react";
 
 const Article = (props) => {
-    var {article1, author1} = props;
+    var {article, action} = props;
+    const author = action.lookupAuthor(article.authorId);
+    const dateDisplay = (dateString) => {
+        return new Date(dateString).toDateString();
+    };
+
     return (
         <div>
             <div>
-                <div>{article1.title}</div>
-                <div>{article1.date}</div>
-                <div>{article1.body}</div>
+                <div>{article.title}</div>
+                <div>{dateDisplay(article.date)}</div>
+                <div>{article.body}</div>
             </div>
             <div>
-                <div>{author1.firstName}</div>
+                <div>{author.firstName}</div>
             </div>
         </div>
     );

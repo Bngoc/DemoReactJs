@@ -14,6 +14,9 @@ class App extends React.Component {
             authors: api.getAuthors()
         };
     }
+    articlesActions = {
+        lookupAuthor: (authorId) => this.state.authors[authorId]
+    };
 
     asyncFunc = (isCheck) => {
         return Promise.resolve(234);
@@ -31,7 +34,7 @@ class App extends React.Component {
         return (
             <ArticleList
                 articles={this.state.articles}
-                authors={this.state.authors}
+                articlesActions={this.articlesActions}
             />
         )
     }

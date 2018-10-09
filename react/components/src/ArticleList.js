@@ -6,8 +6,8 @@ const ArticleList = (props) => {
         <div>
             {Object.values(props.articles).map((article, index) => {
                 return <Article
-                    article1={article}
-                    author1={props.authors[article.authorId]}
+                    article={article}
+                    action={props.articlesActions}
                     key={article.id}
                 />
             })
