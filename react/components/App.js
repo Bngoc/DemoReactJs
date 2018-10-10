@@ -1,18 +1,24 @@
 import React from "react";
-import DataApi from "../../lib/DataApi";
-import {data} from '../../lib/testData';
+import axios from "axios";
+import DataApi from "../../lib/stage-api";
+// import {data} from '../../lib/testData';
 import ArticleList from './src/ArticleList';
 
 const api = new DataApi(data);
 
 class App extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            an: 333,
+    state = {
+        articles: {},
+        authors: {}
+    };
+
+    async componentDidMount() {
+        const resp = await axios.get('/data');
+        const api = new DataApi(resp.data);
+        this.setState = (() => ({
             articles: api.getArticles(),
             authors: api.getAuthors()
-        };
+        }));
     }
     articlesActions = {
         lookupAuthor: (authorId) => this.state.authors[authorId]
@@ -24,11 +30,11 @@ class App extends React.Component {
         // return isCheck == true ? Promise.resolve(23) : Promise.reject(50);
     };
 
-    async componentDidMount() {
-        this.setState({
-            an: await this.asyncFunc(false)
-        });
-    };
+    // async componentDidMount() {
+    //     this.setState({
+    //         an: await this.asyncFunc(false)
+    //     });
+    // };
 
     render() {
         return (

@@ -8,7 +8,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "dev": "SET NODE_ENV=dev& babel-node lib/server.js",
+    "dev": "SET NƠDE_PATH=./lib SET NODE_ENV=dev& babel-node lib/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack -wd",
     "test-dev": "jest --watch"
@@ -16,6 +16,7 @@
   "author": "buingoc",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^7.0.4",
