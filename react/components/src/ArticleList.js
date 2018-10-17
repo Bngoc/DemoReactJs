@@ -7,7 +7,7 @@ const ArticleList = (props) => {
             {Object.values(props.articles).map((article, index) => {
                 return <Article
                     article={article}
-                    action={props.articlesActions}
+                    store={props.store}
                     key={article.id}
                 />
             })

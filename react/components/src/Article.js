@@ -1,11 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+const dateDisplay = (dateString) => {
+    return new Date(dateString).toDateString();
+};
 
 const Article = (props) => {
-    var {article, action} = props;
-    const author = action.lookupAuthor(article.authorId);
-    const dateDisplay = (dateString) => {
-        return new Date(dateString).toDateString();
-    };
+    var {article, store} = props;
+    const author = store.lookupAuthor(article.authorId);
 
     return (
         <div>
@@ -19,6 +21,12 @@ const Article = (props) => {
             </div>
         </div>
     );
+};
+
+Article.PropTypes = {
+    article: PropTypes.shape({
+        date: PropTypes.string.isRequired
+    })
 };
 
 export default Article;
